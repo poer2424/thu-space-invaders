@@ -15,7 +15,6 @@ import java.util.logging.Logger;
 import screen.Screen;
 import entity.Entity;
 import entity.Ship;
-
 /**
  * Manages screen drawing.
  * 
@@ -249,9 +248,11 @@ public final class DrawManager {
 		String scoreString = "";
 
 		//implementation of logic
-		List<Score> highScores = FileManager.getInstance().loadHighScores();
-		
-		int max = -1;
+		fileManager = Core.getFileManager();
+		List<Score> highScores;
+		try {
+			highScores = fileManager.loadHighScores();
+			int max = -1;
 		for(int i = 0; i < highScores.size(); i++) {
 			if(max < highScores.get(i).getScore()) {
 				max = highScores.get(i).getScore();
@@ -266,6 +267,25 @@ public final class DrawManager {
 			scoreString = "score : ";
 			scoreString += String.format("%04d", score);
 		}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		// int max = -1;
+		// for(int i = 0; i < highScores.size(); i++) {
+		// 	if(max < highScores.get(i).getScore()) {
+		// 		max = highScores.get(i).getScore();
+		// 	}
+		// }
+
+		// if(max < score) {
+		// 	scoreString = "new score : ";
+		// 	scoreString += String.format("%04d", score);
+		// }
+		// else {
+		// 	scoreString = "score : ";
+		// 	scoreString += String.format("%04d", score);
+		// }
 		backBufferGraphics.drawString(scoreString, screen.getWidth() - 60, 25);
 	}
 
