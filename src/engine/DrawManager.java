@@ -271,21 +271,6 @@ public final class DrawManager {
 			e.printStackTrace();
 		}
 		
-		// int max = -1;
-		// for(int i = 0; i < highScores.size(); i++) {
-		// 	if(max < highScores.get(i).getScore()) {
-		// 		max = highScores.get(i).getScore();
-		// 	}
-		// }
-
-		// if(max < score) {
-		// 	scoreString = "new score : ";
-		// 	scoreString += String.format("%04d", score);
-		// }
-		// else {
-		// 	scoreString = "score : ";
-		// 	scoreString += String.format("%04d", score);
-		// }
 		backBufferGraphics.drawString(scoreString, screen.getWidth() - 60, 25);
 	}
 
