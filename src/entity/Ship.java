@@ -50,7 +50,7 @@ public class Ship extends Entity {
 		this.shootingCooldown = Core.getCooldown(SHOOTING_INTERVAL);
 		this.destructionCooldown = Core.getCooldown(300);
 	}
-
+	
 	public Ship(final int positionX, final int positionY, int sType) {
 		super(positionX, positionY, 13 * 2, 8 * 2, Color.GREEN);
 		imagep = true;
@@ -59,7 +59,7 @@ public class Ship extends Entity {
 		this.shootingCooldown = Core.getCooldown(SHOOTING_INTERVAL);
 		this.destructionCooldown = Core.getCooldown(1000);
 	}
-
+	
 	/**
 	 * Moves the ship speed uni ts right, or until the right screen border is
 	 * reached.

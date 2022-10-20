@@ -102,6 +102,11 @@ public final class DrawManager {
 		/** dropped item */
 		Item,
 		/** Current Ship Live*/
+		DummyShipLive1,
+		DummyShipLive2,
+		DummyShipLive3,
+		DummyShipLive4,
+		DummyShipLive5,
 		ShipLive;
 	};
 
@@ -128,7 +133,14 @@ public final class DrawManager {
 			spriteMap.put(SpriteType.EnemyShipSpecial, new boolean[16][7]);
 			spriteMap.put(SpriteType.Explosion, new boolean[13][7]);
 			spriteMap.put(SpriteType.Item, new boolean[9][8]);
-			spriteMap.put(SpriteType.ShipLive, new boolean[13][8]);
+			if (6 == 6) {
+				spriteMap.put(SpriteType.DummyShipLive1, new boolean[13][8]);
+				spriteMap.put(SpriteType.DummyShipLive2, new boolean[13][8]);
+				spriteMap.put(SpriteType.DummyShipLive3, new boolean[13][8]);
+				spriteMap.put(SpriteType.DummyShipLive4, new boolean[13][8]);
+				spriteMap.put(SpriteType.DummyShipLive5, new boolean[13][8]);
+				spriteMap.put(SpriteType.ShipLive, new boolean[13][8]);
+			}
 			fileManager.loadSprite(spriteMap);
 			logger.info("Finished loading the sprites.");
 
