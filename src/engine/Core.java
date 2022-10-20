@@ -30,6 +30,7 @@ public final class Core {
 	/** Max fps of current screen. */
 	private static final int FPS = 60;
 
+	
 	/** Max lives. */
 	private static final int MAX_LIVES = 3;
 	/** Levels between extra life. */
