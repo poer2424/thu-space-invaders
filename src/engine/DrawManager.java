@@ -15,13 +15,10 @@ import screen.*;
 import screen.ShopScreen.shopstates;
 import entity.Entity;
 import entity.Ship;
-<<<<<<< HEAD
-=======
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
->>>>>>> 3800bdc7166b28e7a2e1a37ff87afe50b611d716
 /**
  * Manages screen drawing.
  * 
@@ -101,9 +98,7 @@ public final class DrawManager {
 		/** Custom Ship Image */
 		ShipCustomDestroyed,
 		/** dropped item */
-		Item,
-		/** Current Ship Live*/
-		ShipLive;
+		Item;
 	};
 
 	/**
@@ -129,7 +124,6 @@ public final class DrawManager {
 			spriteMap.put(SpriteType.EnemyShipSpecial, new boolean[16][7]);
 			spriteMap.put(SpriteType.Explosion, new boolean[13][7]);
 			spriteMap.put(SpriteType.Item, new boolean[9][8]);
-			spriteMap.put(SpriteType.ShipLive, new boolean[13][8]);
 			fileManager.loadSprite(spriteMap);
 			logger.info("Finished loading the sprites.");
 
@@ -318,7 +312,6 @@ public final class DrawManager {
 		backBufferGraphics.setFont(fontRegular);
 		backBufferGraphics.setColor(Color.WHITE);
 		String scoreString = String.format("%04d", score);
-<<<<<<< HEAD
 		backBufferGraphics.drawString(scoreString, screen.getWidth() - 60, 25);
 		*/
 		backBufferGraphics.setFont(fontRegular);
@@ -351,22 +344,6 @@ public final class DrawManager {
 		}
 		
 		backBufferGraphics.drawString(scoreString, screen.getWidth() - 60, 25);
-=======
-		backBufferGraphics.drawString("Score:" + scoreString, screen.getWidth() - 100, 25);
-	}
-
-	public void drawCoin(final Screen screen, final int coin) {
-		backBufferGraphics.setFont(fontRegular);
-		backBufferGraphics.setColor(Color.WHITE);
-		String coinString = String.format("%04d", coin);
-		try {
-			coin_icon = ImageIO.read(new File("icon\\coin-icon.png\\"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		backBufferGraphics.drawImage(coin_icon, 190, 8, 22, 22, observer);
-		backBufferGraphics.drawString(coinString, screen.getWidth() - 212, 25);
->>>>>>> 3800bdc7166b28e7a2e1a37ff87afe50b611d716
 	}
 
 	/**
@@ -423,12 +400,6 @@ public final class DrawManager {
 	 * Draws main menu.
 	 *
 	 * @param screen
-<<<<<<< HEAD
-	 *            Screen to draw on.
-	 * @param option
-	 *            Option selected.
-	 */
-=======
 	 *               Screen to draw on.
 	 */
 
@@ -443,7 +414,6 @@ public final class DrawManager {
 		drawCenteredRegularString(screen, instructionsString, screen.getHeight() / 5);
 	}
 
->>>>>>> 3800bdc7166b28e7a2e1a37ff87afe50b611d716
 	public void drawMenu(final Screen screen, final int option) {
 		String playString = "Play";
 		String highScoresString = "High scores";
@@ -461,8 +431,6 @@ public final class DrawManager {
 			backBufferGraphics.setColor(Color.WHITE);
 		drawCenteredRegularString(screen, highScoresString, screen.getHeight()
 				/ 3 * 2 + fontRegularMetrics.getHeight() * 2);
-<<<<<<< HEAD
-=======
 
 		// returnCode == 4 : settings
 		if (option == 4)
@@ -481,7 +449,6 @@ public final class DrawManager {
 				* 2 + fontRegularMetrics.getHeight() * 1);
 
 		// returnCode == 0 : exit
->>>>>>> 3800bdc7166b28e7a2e1a37ff87afe50b611d716
 		if (option == 0)
 			backBufferGraphics.setColor(HUDSettingScreen.getScreenColor());
 		else
@@ -490,8 +457,6 @@ public final class DrawManager {
 				* 2 + fontRegularMetrics.getHeight() * 4);
 	}
 
-<<<<<<< HEAD
-=======
 	public void drawSettingItems(final Screen screen, final int option) {
 
 		String screensizeString = "Screen Size";
@@ -674,7 +639,6 @@ public final class DrawManager {
 				screen.getHeight() / 3 + fontRegular2Metrics.getHeight() * 6);
 	}
 
->>>>>>> 3800bdc7166b28e7a2e1a37ff87afe50b611d716
 	/**
 	 * Draws game results.
 	 *
@@ -863,8 +827,6 @@ public final class DrawManager {
 	}
 
 	/**
-<<<<<<< HEAD
-=======
 	 * Draws settings screen title and instructions.
 	 *
 	 * @param screen
@@ -950,7 +912,6 @@ public final class DrawManager {
 	}
 
 	/**
->>>>>>> 3800bdc7166b28e7a2e1a37ff87afe50b611d716
 	 * Draws a centered string on regular font.
 	 *
 	 * @param screen
@@ -960,13 +921,6 @@ public final class DrawManager {
 	 * @param height
 	 *               Height of the drawing.
 	 */
-<<<<<<< HEAD
-	public void drawCenteredRegularString(final Screen screen,
-			final String string, final int height) {
-		backBufferGraphics.setFont(fontRegular);
-		backBufferGraphics.drawString(string, screen.getWidth() / 2
-				- fontRegularMetrics.stringWidth(string) / 2, height);
-=======
 	public void drawCenteredRegular2String(final Screen screen,
 			final String string, final int height) {
 		backBufferGraphics.setFont(fontRegular2);
@@ -993,7 +947,6 @@ public final class DrawManager {
 		backBufferGraphics.setFont(fontRegular2);
 		backBufferGraphics.drawString(string, 3 * screen.getWidth() / 4
 				- fontRegular2Metrics.stringWidth(string) / 2, height);
->>>>>>> 3800bdc7166b28e7a2e1a37ff87afe50b611d716
 	}
 
 	/**
@@ -1051,8 +1004,6 @@ public final class DrawManager {
 			drawCenteredBigString(screen, "GO!", screen.getHeight() / 2
 					+ fontBigMetrics.getHeight() / 3);
 	}
-<<<<<<< HEAD
-=======
 
 	public int getshopgridcoordx(int c) {
 		int leftbuf = (backBuffer.getWidth() - (50 * 5 + 30 * 4)) / 2;
@@ -1273,5 +1224,4 @@ public final class DrawManager {
 			offset += 50;
 		}
 	}
->>>>>>> 3800bdc7166b28e7a2e1a37ff87afe50b611d716
 }
