@@ -237,10 +237,22 @@ public final class DrawManager {
 	 *            Current score.
 	 */
 	public void drawScore(final Screen screen, final int score) {
-		backBufferGraphics.setFont(fontRegular);
-		backBufferGraphics.setColor(Color.WHITE);
-		String scoreString = String.format("%04d", score);
-		backBufferGraphics.drawString(scoreString, screen.getWidth() - 60, 25);
+		/*
+      backBufferGraphics.setFont(fontRegular);
+      backBufferGraphics.setColor(Color.WHITE);
+      String scoreString = String.format("%04d", score);
+      backBufferGraphics.drawString(scoreString, screen.getWidth() - 60, 25);
+      */
+      backBufferGraphics.setFont(fontRegular);
+      backBufferGraphics.setColor(Color.WHITE);
+
+      String scoreString = "";
+
+      //implementation of logic
+      fileManager = Core.getFileManager();
+      List<Score> highScores = fileManager.loadHighScores()
+      
+      backBufferGraphics.drawString(scoreString, screen.getWidth() - 60, 25);
 	}
 
 	/**
