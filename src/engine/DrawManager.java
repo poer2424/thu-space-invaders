@@ -101,7 +101,9 @@ public final class DrawManager {
 		/** Custom Ship Image */
 		ShipCustomDestroyed,
 		/** dropped item */
-		Item;
+		Item,
+		/** Current Ship Live*/
+		ShipLive;
 	};
 
 	/**
@@ -127,6 +129,7 @@ public final class DrawManager {
 			spriteMap.put(SpriteType.EnemyShipSpecial, new boolean[16][7]);
 			spriteMap.put(SpriteType.Explosion, new boolean[13][7]);
 			spriteMap.put(SpriteType.Item, new boolean[9][8]);
+			spriteMap.put(SpriteType.ShipLive, new boolean[13][8]);
 			fileManager.loadSprite(spriteMap);
 			logger.info("Finished loading the sprites.");
 
